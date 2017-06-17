@@ -1,7 +1,7 @@
 @extends('layouts.blank')
 
 @section('title')
-    PKM NCC | Device
+    PKM NCC | Record Device
 @endsection
 
 @push('stylesheets')
@@ -31,14 +31,14 @@
             
             <section class="page-title">
                 <div class="title_left">
-                  <h3>Device</h3>
+                  <h3>Record Device</h3>
                 </div>
                 <div class="title_right">
                   <div class="pull-right">
                     <section class="content-header">
                       <ol class="breadcrumb">
                       <li><a href="{{ url('home') }}"><i class="fa fa-home"></i>Home</a></li>
-                      <li class="active">Device</li>
+                      <li class="active">Record Device</li>
                     </ol>  
                     </section>
                   </div>
@@ -53,7 +53,7 @@
                   <div class="x_title">
                     <h2>Device<small>
                       <a href="{{ url('device/create') }}" class="btn btn-primary btn-xs">
-                        <i class="fa fa-plus-square" style="margin-right: 6px;"></i>Create New
+                        <i class="fa fa-plus-square" style="margin-right: 6px;"></i>Tambah Device
                       </a>
                       </small>
                     </h2>

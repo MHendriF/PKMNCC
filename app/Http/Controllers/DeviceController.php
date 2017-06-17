@@ -19,10 +19,9 @@ class DeviceController extends Controller
         return view('devices.add_device');
     }
 
-    public function setDevice()
+    public function direct()
     {
-    	$data = Devices::all();
-        return view('devices.set_device', compact('data'));
+        return view('devices.device');
     }
 
     public function store(Request $request)
@@ -46,15 +45,6 @@ class DeviceController extends Controller
             
     }
 
-    public function show($id)
-    {
-       
-    }
-
-    public function edit($id)
-    {
-       
-    }
 
     public function update(Request $request, $id)
     {
@@ -78,5 +68,45 @@ class DeviceController extends Controller
             Session::flash('delete', 'Device was successfully deleted!');
             return redirect('device');
         }  
+    }
+
+    public function manual()
+    {
+        $data = Devices::where('nama_device','lampu_a')
+                ->orderBy('created_at', 'desc')->limit(1)->get();
+                
+        $data2 = Devices::where('nama_device','lampu_b')
+                ->orderBy('created_at', 'desc')->limit(1)->get();
+
+        $data3 = Devices::where('nama_device','lampu_c')
+                ->orderBy('created_at', 'desc')->limit(1)->get();
+        
+        return view('devices.set_device', compact('data','data2','data3'));
+    }
+    
+    public function simpan($nama_device, $status_device)
+    {
+        $deskripsi = "lampu lala";
+        $tambah = new devices(); //membuat objek yang terhubung ke table Logs
+        $tambah->nama_device = $nama_device;
+        $tambah->status_device = $status_device;
+        $tambah->deskripsi = $deskripsi;
+       
+        $tambah->save();
+        Session::flash('update', 'Device was successfully updated!');
+        return redirect('set_device');
+    }
+    
+    public function status_terbaru()
+    {
+     //   $newlongsor = Devices::select('status_device')->where('nama_device', '=' , 'lampu_a')->first();
+     $newlongsor = Devices::select('status_device')->where('nama_device', '=' , 'lampu_a')->orderBy('created_at', 'desc')->first();
+        return $newlongsor->status_device; //mengembalikan single value
+    }
+    
+    public function record()
+    {
+        $data = Devices::all();
+        return view('device.record_device', compact('data'));
     }
 }

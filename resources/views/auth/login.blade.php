@@ -31,7 +31,7 @@
         
         <div class="animate form login_form">
           <section class="login_content">
-            <form method="post" action="{{ url('/login') }}" data-parsley-validate>
+            <form method="post" action="{{ url('login') }}" {{-- action="{{ url('api/android/postlogin') }}" --}} data-parsley-validate>
                 {!! csrf_field() !!}
                 
                 <h1>Login Form</h1>
@@ -83,8 +83,8 @@
                     <br />
                         
                     <div>
-                        <h1><i class="fa fa-paw"></i> Toko Bahagia</h1>
-                        <p>©2017 All Rights Reserved. Toko Bahagia is a Bootstrap 3 template. Privacy and Terms</p>
+                        <h1><i class="fa fa-paw"></i> Omah Sakti</h1>
+                        <p>©2017 All Rights Reserved. Omah Sakti is a Bootstrap 3 template. Privacy and Terms</p>
                     </div>
                 </div>
             </form>

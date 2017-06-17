@@ -61,25 +61,6 @@
                     </div>
                     <div class="x_content">
                         <br />
-                        {{-- <form method="get" action="http://adeilhamfajri.id/api/store/z/100000/100000" id="demo-form2" class="form-horizontal form-label-left"> --}}
-                            {{-- {!! csrf_field() !!} --}}
-
-                            {{-- @foreach($data as $index => $lampu)
-                            <div class="form-group">
-                                <label class="control-label col-md-5">Lampu {{$lampu->id}} : 
-                                </label>
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                  <div class="sensor">
-                                    <label>Off</label>
-                                    <label>
-                                        <input type='hidden' value='0' name='lampu'>
-                                        <input type="checkbox" class="js-switch" name="lampu" value="1" onClick="location.href='http://google.com';" checked /> On
-                                    </label>
-                                  </div>
-                                </div>
-                            </div>
-                            @endforeach --}}
-                        {{-- </form> --}}
                             
                             <div class="form-group">
                                 <label class="control-label col-md-5">Lampu 1 : 
@@ -220,13 +201,20 @@
             $('#checkbox1').click(function() {
                 if (!$(this).is(':checked')) {
                     setTimeout(function() {
-                      window.location='http://www.yahoo.com';
+                        //e.preventDefault();
+                        var url = "http://omahsakti.my.id/api/lampu_a/0";
+                        $(location).attr('href', url);
+                      //window.location='http://adeilhamfajri.id/api/store/z/100001/100000';
                     }, 500);
+                    
                 
                 }
                 else
                     setTimeout(function() {
-                      window.location='http://www.google.com';
+                        //e.preventDefault();
+                       var url = "http://omahsakti.my.id/api/lampu_a/1";
+                        $(location).attr('href', url);
+                      //window.location='http://adeilhamfajri.id/api/store/z/100002/100000';
                     }, 500);
             });
 

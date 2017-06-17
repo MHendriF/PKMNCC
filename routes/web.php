@@ -23,9 +23,15 @@ Route::get('/', function () {
 Route::resource('on_off', 'AdminController');
 Route::resource('device', 'DeviceController');
 Route::post('device/{id}', 'DeviceController@update');
-Route::get('set_device', 'DeviceController@setDevice');
-
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+Route::get('set_device', 'DeviceController@manual');
+//Route::get('record_device', 'DeviceController@record');
+Route::get('api/{nama_device}/{status_device}', 'DeviceController@simpan');
+Route::get('api/status_terbaru', 'DeviceController@status_terbaru');
+
+Route::get('api/android/status/lampu', 'AndroidController@status');
+Route::post('api/android/postlogin', 'AndroidController@postLogin');
+Route::get('api/android/{nama_device}/{status_device}', 'AndroidController@simpan');

@@ -16,7 +16,7 @@ class DeviceTable extends Migration
         Schema::create('devices', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama_device', 191);
-            $table->boolean('status_device');
+            $table->string('status_device', 2);
             $table->string('deskripsi', 191);
             $table->timestamps();
         });

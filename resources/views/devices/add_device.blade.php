@@ -77,8 +77,8 @@
                                   <div class="sensor">
                                     <label>Off</label>
                                     <label>
-                                        <input type='hidden' value='0' name='status_device'>
-                                        <input type="checkbox" class="js-switch" name="status_device" value="1" checked /> On
+                                        <input type='hidden' value='0-' name='status_device'>
+                                        <input type="checkbox" class="js-switch" name="status_device" value="1-" checked /> On
                                     </label>
                                   </div>
                                 </div>

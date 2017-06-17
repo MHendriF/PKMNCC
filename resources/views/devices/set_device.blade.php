@@ -1,7 +1,7 @@
 @extends('layouts.blank')
 
 @section('title')
-    PKM NCC | Set On/Off
+    PKM NCC | Set Device
 @endsection
 
 @push('stylesheets')
@@ -62,29 +62,69 @@
                     <div class="x_content">
                         <br />
 
+                        
                         @foreach($data as $index => $lampu)
-                            <form method="post" action="{{ url('device/'.$lampu->id) }}" id="demo-form2" class="form-horizontal form-label-left">
-                                {!! csrf_field() !!}
+                            <div class="form-horizontal form-label-left">
                                 <div class="form-group">
-                                    <label class="control-label col-md-5">Lampu {{$lampu->id}} : 
+                                    <label class="control-label col-md-5">Lampu {{$index +1}} : 
                                     </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
                                       <div class="sensor">
                                         <label>Off</label>
                                         <label>
-                                            <input type='hidden' value='0' name='status_device'>
-                                            @if($lampu->status_device == 1)
-                                            <input type="checkbox" class="js-switch" name="status_device" value="1" onClick="submit();" checked /> On
+                                            @if($lampu->status_device == "1-")
+                                            <input type="checkbox" class="js-switch" id="checkbox{{$index +1}}" checked /> On
                                             @else
-                                            <input type="checkbox" class="js-switch" name="status_device" value="1" onClick="submit();" /> On
+                                            <input type="checkbox" class="js-switch" id="checkbox{{$index +1}}" unchecked /> On
                                             @endif
                                         </label>
                                       </div>
                                     </div>
                                 </div>
-                            </form>
+                            </div>
                         @endforeach
-                            
+                        
+                        @foreach($data2 as $index => $lampu)
+                            <div class="form-horizontal form-label-left">
+                                <div class="form-group">
+                                    <label class="control-label col-md-5">Lampu {{$index +2}} : 
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                      <div class="sensor">
+                                        <label>Off</label>
+                                        <label>
+                                            @if($lampu->status_device == "1-")
+                                            <input type="checkbox" class="js-switch" id="checkbox{{$index +2}}" checked /> On
+                                            @else
+                                            <input type="checkbox" class="js-switch" id="checkbox{{$index +2}}" unchecked /> On
+                                            @endif
+                                        </label>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+
+                         @foreach($data3 as $index => $lampu)
+                            <div class="form-horizontal form-label-left">
+                                <div class="form-group">
+                                    <label class="control-label col-md-5">Lampu {{$index +3}} : 
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                      <div class="sensor">
+                                        <label>Off</label>
+                                        <label>
+                                            @if($lampu->status_device == "1-")
+                                            <input type="checkbox" class="js-switch" id="checkbox{{$index +3}}" checked /> On
+                                            @else
+                                            <input type="checkbox" class="js-switch" id="checkbox{{$index +3}}" unchecked /> On
+                                            @endif
+                                        </label>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
 
                     </div>
                 </div>
@@ -117,6 +157,58 @@
     <!-- Include Scripts -->
     @include('javascript.pnotify')
     
+     <script type="text/javascript">
+        $(document).ready(function() {
+
+            $('#checkbox1').click(function() {
+                if (!$(this).is(':checked')) {
+                    setTimeout(function() {
+                        //e.preventDefault();
+                        var url = "http://localhost:8000/api/lampu_a/0-";
+                        $(location).attr('href', url);
+                    }, 500);
+                    
+                
+                }
+                else
+                    setTimeout(function() {
+                        //e.preventDefault();
+                       var url = "http://localhost:8000/api/lampu_a/1-";
+                        $(location).attr('href', url);
+                    }, 500);
+            });
+
+            $('#checkbox2').click(function() {
+                if (!$(this).is(':checked')) {
+                    //return confirm("Are you sure?");
+                    setTimeout(function() {
+                        var url = "http://localhost:8000/api/lampu_b/0-";
+                        $(location).attr('href', url);
+                    }, 500);
+                }
+                else
+                    setTimeout(function() {
+                        var url = "http://localhost:8000/api/lampu_b/1-";
+                        $(location).attr('href', url);
+                    }, 500);
+            });
+
+            $('#checkbox3').click(function() {
+                if (!$(this).is(':checked')) {
+                    //return confirm("Are you sure?");
+                    setTimeout(function() {
+                        var url = "http://localhost:8000/api/lampu_c/0-";
+                        $(location).attr('href', url);
+                    }, 500);
+                }
+                else
+                    setTimeout(function() {
+                        var url = "http://localhost:8000/api/lampu_c/1-";
+                        $(location).attr('href', url);
+                    }, 500);
+            });
+        });
+    </script>
 
     @endpush
 @endsection

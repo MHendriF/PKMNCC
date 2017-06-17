@@ -54,16 +54,36 @@
                             <div class="clearfix"></div>
                           </div>
                           <div class="x_content">
-
-                            <p>Data Pengguna</p>
-                            <p>Nama : {{ Auth::user()->name }}</p>
-                            <p>Email : {{ Auth::user()->email }}</p>
-                            <p>No Hp : {{ Auth::user()->no_hp }}</p>
-                            <p>Alamat : {{ Auth::user()->alamat }}</p>
-                            <p>Kota : {{ Auth::user()->kota_domisili }}</p>
-                            <p>Negara : {{ Auth::user()->negara_domisili }}</p>
+                              <div class="form-horizontal form-label-left">
+                                <div class="form-group">
+                                    <label class="control-label col-md-6 col-xs-12">----- Data Pengguna -----</label>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-5">Nama : </label>
+                                    <label class="control-label">{{ Auth::user()->name }}</label>
+                                </div>
+                                 <div class="form-group">
+                                    <label class="control-label col-md-5">Email : </label>
+                                    <label class="control-label">{{ Auth::user()->email }}</label>
+                                </div>
+                                 <div class="form-group">
+                                    <label class="control-label col-md-5">No HP : </label>
+                                    <label class="control-label">{{ Auth::user()->no_hp }}</label>
+                                </div>
+                                 <div class="form-group">
+                                    <label class="control-label col-md-5">Alamat : </label>
+                                    <label class="control-label">{{ Auth::user()->alamat }}</label>
+                                </div>
+                                 <div class="form-group">
+                                    <label class="control-label col-md-5">Kota : </label>
+                                    <label class="control-label">{{ Auth::user()->kota_domisili }}</label>
+                                </div>
+                                 <div class="form-group">
+                                    <label class="control-label col-md-5">Negara : </label>
+                                    <label class="control-label">{{ Auth::user()->negara_domisili }}</label>
+                                </div>
+                            </div>
                             
-                                
                           </div>
                         </div>
                       </div>
