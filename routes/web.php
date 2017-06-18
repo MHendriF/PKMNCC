@@ -32,6 +32,7 @@ Route::get('set_device', 'DeviceController@manual');
 Route::get('api/{nama_device}/{status_device}', 'DeviceController@simpan');
 Route::get('api/status_terbaru', 'DeviceController@status_terbaru');
 
-Route::get('api/android/status/lampu', 'AndroidController@status');
+Route::get('login_android', 'AndroidController@login');
+//Route::get('api/android/status/lampu', 'AndroidController@status');
 Route::post('api/android/postlogin', 'AndroidController@postLogin');
 Route::get('api/android/{nama_device}/{status_device}', 'AndroidController@simpan');

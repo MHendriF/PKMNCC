@@ -102,7 +102,7 @@
                     @endif
                 </div>
                 
-                <div class="form-group has-feedback{{ $errors->has('status_akun') ? ' has-error' : '' }}">
+                {{-- <div class="form-group has-feedback{{ $errors->has('status_akun') ? ' has-error' : '' }}">
                     <input type="text" class="form-control" name="status_akun" value="{{ old('status_akun') }}" placeholder="Status" required/>
                     <span class="glyphicon glyphicon-tag form-control-feedback"></span>
                     
@@ -111,7 +111,7 @@
                           <strong>{{ $errors->first('status_akun') }}</strong>
                         </span>
                     @endif
-                </div>
+                </div> --}}
 
                 <div class="form-group has-feedback{{ $errors->has('password') ? ' has-error' : '' }}">
                     <input id="password" type="password" data-parsley-minlength="5" class="form-control" name="password" placeholder="Password" required/>

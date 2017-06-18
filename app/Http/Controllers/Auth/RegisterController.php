@@ -75,7 +75,7 @@ class RegisterController extends Controller
             'alamat'          => $data['alamat'],
             'kota_domisili'   => $data['kota_domisili'],
             'negara_domisili' => $data['negara_domisili'],
-            'status_akun'     => $data['status_akun'],
+            'status_akun'     => "Pelanggan",
         ]);
 
     }
