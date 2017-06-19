@@ -55,7 +55,6 @@ class RegisterController extends Controller
             'alamat'          => 'required',
             'kota_domisili'   => 'required',
             'negara_domisili' => 'required',
-            'status_akun'     => 'required',
         ]);
     }
 

@@ -16,5 +16,6 @@ class DeviceTransformer extends TransformerAbstract
 			'status_device' => $device->status_device,
 			'deskripsi' => $device->deskripsi,
 		];
+		
 	}
 }
