@@ -111,4 +111,17 @@ class AndroidController extends Controller
         return view('auth.login_android');
     }
 
+    public function store(Request $request)
+    {
+        try{
+            
+        } 
+        catch(\Exception $e){
+            return redirect()->back()->with('error', ' Sorry something went worng. Please try again.');
+        }
+
+        //dd($request->all()); 
+    }
+
+
 }
